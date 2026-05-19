@@ -1,0 +1,86 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ------------------------< com.nadine:books-api >------------------------
+[INFO] Building books-api 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.2.0:run (default-cli) > test-compile @ books-api >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ books-api ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ books-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ books-api ---
+[INFO] skip non existing resourceDirectory C:\Users\nadin\Documents\New project\NadineBooks\books-api\src\test\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:testCompile (default-testCompile) @ books-api ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< spring-boot:3.2.0:run (default-cli) < test-compile @ books-api <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.2.0:run (default-cli) @ books-api ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-14T18:24:48.179+01:00  INFO 1356 --- [           main] com.nadine.books.BooksApiApplication     : Starting BooksApiApplication using Java 17.0.12 with PID 1356 (C:\Users\nadin\Documents\New project\NadineBooks\books-api\target\classes started by nadin in C:\Users\nadin\Documents\New project\NadineBooks\books-api)
+2026-05-14T18:24:48.179+01:00  INFO 1356 --- [           main] com.nadine.books.BooksApiApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T18:24:49.048+01:00  INFO 1356 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T18:24:49.117+01:00  INFO 1356 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 3 JPA repository interfaces.
+2026-05-14T18:24:49.833+01:00  INFO 1356 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8088 (http)
+2026-05-14T18:24:49.849+01:00  INFO 1356 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T18:24:49.849+01:00  INFO 1356 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-14T18:24:49.912+01:00  INFO 1356 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/books]  : Initializing Spring embedded WebApplicationContext
+2026-05-14T18:24:49.918+01:00  INFO 1356 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1665 ms
+2026-05-14T18:24:50.098+01:00  INFO 1356 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T18:24:50.157+01:00  INFO 1356 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-14T18:24:50.187+01:00  INFO 1356 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T18:24:50.393+01:00  INFO 1356 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T18:24:50.426+01:00  INFO 1356 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T18:24:50.603+01:00  INFO 1356 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@113eed88
+2026-05-14T18:24:50.607+01:00  INFO 1356 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T18:24:51.824+01:00  INFO 1356 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: create table book (id_book bigint not null auto_increment, date_creation date, image_path varchar(255), nom_book varchar(255), prix_book float(53), genre_id_genre bigint, primary key (id_book)) engine=InnoDB
+Hibernate: create table genre (id_genre bigint not null auto_increment, description_genre varchar(255), nom_genre varchar(255), primary key (id_genre)) engine=InnoDB
+Hibernate: create table image (id_image bigint not null auto_increment, image mediumblob, name varchar(255), type varchar(255), book_id bigint, primary key (id_image)) engine=InnoDB
+Hibernate: alter table book add constraint FK68294cprn5juk03mctnrhuntt foreign key (genre_id_genre) references genre (id_genre)
+Hibernate: alter table image add constraint FK56boxkje8rys2n78amvgkk913 foreign key (book_id) references book (id_book)
+2026-05-14T18:24:52.254+01:00  INFO 1356 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-14T18:24:52.784+01:00  INFO 1356 --- [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-14T18:24:53.647+01:00  WARN 1356 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T18:24:54.077+01:00  INFO 1356 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@42b4cce1, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67f8586f, org.springframework.security.web.context.SecurityContextHolderFilter@270663e2, org.springframework.security.web.header.HeaderWriterFilter@7df0bb1, org.springframework.web.filter.CorsFilter@63c6579, org.springframework.security.web.authentication.logout.LogoutFilter@4d248692, com.nadine.books.security.JWTAuthorizationFilter@5c7a699b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@31084f37, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1ececb56, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@38cd7531, org.springframework.security.web.session.SessionManagementFilter@363bf9d, org.springframework.security.web.access.ExceptionTranslationFilter@4c683777, org.springframework.security.web.access.intercept.AuthorizationFilter@25000d3d]
+2026-05-14T18:24:54.360+01:00  INFO 1356 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8088 (http) with context path '/books'
+2026-05-14T18:24:54.368+01:00  INFO 1356 --- [           main] com.nadine.books.BooksApiApplication     : Started BooksApiApplication in 6.635 seconds (process running for 7.152)
+Hibernate: select count(*) from genre g1_0
+Hibernate: insert into genre (description_genre,nom_genre) values (?,?)
+Hibernate: insert into genre (description_genre,nom_genre) values (?,?)
+2026-05-14T18:25:29.179+01:00  INFO 1356 --- [nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/books]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T18:25:29.179+01:00  INFO 1356 --- [nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T18:25:29.184+01:00  INFO 1356 --- [nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2026-05-14T18:25:29.195+01:00  WARN 1356 --- [nio-8088-exec-1] o.s.w.s.h.HandlerMappingIntrospector     : Cache miss for REQUEST dispatch to '/books/api/genre' (previous null). Performing MatchableHandlerMapping lookup. This is logged once only at WARN level, and every time at TRACE.
+Hibernate: select g1_0.id_genre,g1_0.description_genre,g1_0.nom_genre from genre g1_0
+Hibernate: select g1_0.id_genre,g1_0.description_genre,g1_0.nom_genre from genre g1_0
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  01:51 min
+[INFO] Finished at: 2026-05-14T18:26:35+01:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:3.2.0:run (default-cli) on project books-api: Process terminated with exit code: -1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

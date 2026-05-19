@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Gestion des Books</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/books">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBooks"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Books
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownBooks">
+            @if(authService.isAdmin()) {
+              <li><a class="dropdown-item" routerLink="/add-book">Ajouter</a></li>
+            }
+            <li><a class="dropdown-item" routerLink="/books">Lister</a></li>
+            <li><a class="dropdown-item" routerLink="/rechercheParGenre">Recherche Genre</a></li>
+            <li><a class="dropdown-item" routerLink="/rechercheParNom">Recherche Nom</a></li>
+            <li><a class="dropdown-item" routerLink="/listeGenres">Gestion des genres</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ms-auto m-2">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUser"
+            role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            [{{authService.loggedUser}}]
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownUser">
+            @if(!authService.isloggedIn) {
+              <li><a class="dropdown-item" routerLink="/login">Login</a></li>
+              <li><a class="dropdown-item" routerLink="/register">S'inscrire</a></li>
+            }
+            @else {
+              <li><a class="dropdown-item" (click)="onLogout()">Logout</a></li>
+            }
+            <li><a class="dropdown-item" routerLink="/profile">Profile</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<router-outlet />

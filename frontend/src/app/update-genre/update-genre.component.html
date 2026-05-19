@@ -1,0 +1,17 @@
+<div>
+  <div class="form-group">
+    <label>Id Genre</label>
+    <input [(ngModel)]="genre.idGenre" name="idGenre" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Nom Genre</label>
+    <input [(ngModel)]="genre.nomGenre" name="nomGenre" class="form-control">
+  </div>
+  <button class="btn btn-primary mt-3" (click)="saveGenre()">
+    @if(ajout) {
+      Ajouter
+    } @else {
+      Modifier
+    }
+  </button>
+</div>

@@ -1,0 +1,34 @@
+@if(err) {
+  <div class="alert alert-danger">
+    <strong>{{ err }}</strong>
+  </div>
+}
+<div class="card shadow-sm mb-3">
+  <div class="card-body">
+    <form class="row g-3 align-items-end">
+      <div class="col-md-5">
+        <label class="form-label">Recherche serveur par nom</label>
+        <input [(ngModel)]="nomBook" name="nomBook" class="form-control" placeholder="Ex: Prince">
+      </div>
+      <div class="col-md-2">
+        <button type="button" class="btn btn-primary w-100" (click)="rechercherBooks()">Rechercher</button>
+      </div>
+      <div class="col-md-5">
+        <label class="form-label">Filtre local instantane</label>
+        <input class="form-control" [ngModel]="searchTerm" (ngModelChange)="onKeyUp($event)" name="searchTerm" placeholder="Tape ici pour filtrer">
+      </div>
+    </form>
+  </div>
+</div>
+
+<table class="table table-striped">
+  @for(book of books; track book.idBook) {
+    <tbody>
+      <tr>
+        <td>{{ book.idBook }}</td>
+        <td>{{ book.nomBook }}</td>
+        <td>{{ book.prixBook }}</td>
+      </tr>
+    </tbody>
+  }
+</table>

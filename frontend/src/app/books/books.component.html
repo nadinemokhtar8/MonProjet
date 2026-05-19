@@ -1,0 +1,38 @@
+<div class="container">
+  @if(err) {
+    <div class="alert alert-danger">
+      <strong>{{ err }}</strong>
+    </div>
+  }
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th><th>Nom</th><th>Prix</th><th>Date Création</th><th>Genre</th><th>Image</th>
+          </tr>
+        </thead>
+        @for (book of books; track book.idBook) {
+          <tbody>
+            <tr>
+              <td>{{book.idBook}}</td>
+              <td>{{book.nomBook}}</td>
+              <td>{{book.prixBook}}</td>
+              <td>{{book.dateCreation | date:'dd/MM/yyyy'}}</td>
+              <td>{{book.genre?.nomGenre}}</td>
+              <td>
+                @if(book.imageStr) {
+                  <img class="card-img-top img-responsive" [src]="book.imageStr" style="height:50px;width:100px">
+                }
+              </td>
+              @if(authService.isAdmin()) {
+                <td><a class="btn btn-danger" (click)="supprimerBook(book)">Supprimer</a></td>
+                <td><a class="btn btn-success" [routerLink]="['/updateBook',book.idBook]">Modifier</a></td>
+              }
+            </tr>
+          </tbody>
+        }
+      </table>
+    </div>
+  </div>
+</div>

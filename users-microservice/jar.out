@@ -1,0 +1,42 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-14T18:27:53.806+01:00  INFO 28020 --- [           main] c.n.users.UsersMicroserviceApplication   : Starting UsersMicroserviceApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 28020 (C:\Users\nadin\Documents\New project\NadineBooks\users-microservice\target\users-microservice-0.0.1-SNAPSHOT.jar started by nadin in C:\Users\nadin\Documents\New project\NadineBooks\users-microservice)
+2026-05-14T18:27:53.824+01:00  INFO 28020 --- [           main] c.n.users.UsersMicroserviceApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-14T18:27:55.936+01:00  INFO 28020 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-14T18:27:56.087+01:00  INFO 28020 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 134 ms. Found 2 JPA repository interfaces.
+2026-05-14T18:27:57.584+01:00  INFO 28020 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-14T18:27:57.600+01:00  INFO 28020 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-14T18:27:57.602+01:00  INFO 28020 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-14T18:27:57.702+01:00  INFO 28020 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/users]  : Initializing Spring embedded WebApplicationContext
+2026-05-14T18:27:57.708+01:00  INFO 28020 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3636 ms
+2026-05-14T18:27:58.249+01:00  INFO 28020 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-14T18:27:58.508+01:00  INFO 28020 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-14T18:27:58.607+01:00  INFO 28020 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-14T18:27:59.000+01:00  INFO 28020 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-14T18:27:59.069+01:00  INFO 28020 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-14T18:27:59.548+01:00  INFO 28020 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@658e7ead
+2026-05-14T18:27:59.560+01:00  INFO 28020 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-14T18:28:01.189+01:00  INFO 28020 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-14T18:28:01.291+01:00  INFO 28020 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: select u1_0.user_id,u1_0.code_creation_date,u1_0.email,u1_0.enabled,u1_0.password,u1_0.username,u1_0.verification_code from user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_user_id,r1_1.role_id,r1_1.role from users_roles r1_0 join role r1_1 on r1_1.role_id=r1_0.roles_role_id where r1_0.user_user_id=?
+2026-05-14T18:28:03.698+01:00  WARN 28020 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-14T18:28:05.441+01:00  INFO 28020 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1f4b8027, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@501b15b9, org.springframework.security.web.context.SecurityContextHolderFilter@4d1f168, org.springframework.security.web.header.HeaderWriterFilter@3d2b8e, org.springframework.web.filter.CorsFilter@769b1d1c, org.springframework.security.web.authentication.logout.LogoutFilter@218fc40d, com.nadine.users.security.JWTAuthenticationFilter@c5e7696, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@28532753, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@21399e53, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4f579582, org.springframework.security.web.session.SessionManagementFilter@930911e, org.springframework.security.web.access.ExceptionTranslationFilter@2222cd2c, org.springframework.security.web.access.intercept.AuthorizationFilter@4cd079fe]
+2026-05-14T18:28:06.135+01:00  INFO 28020 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8081 (http) with context path '/users'
+2026-05-14T18:28:06.203+01:00  INFO 28020 --- [           main] c.n.users.UsersMicroserviceApplication   : Started UsersMicroserviceApplication in 13.565 seconds (process running for 14.702)
+2026-05-14T18:28:39.108+01:00  INFO 28020 --- [nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/users]  : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-05-14T18:28:39.108+01:00  INFO 28020 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-05-14T18:28:39.109+01:00  INFO 28020 --- [nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+Hibernate: select u1_0.user_id,u1_0.code_creation_date,u1_0.email,u1_0.enabled,u1_0.password,u1_0.username,u1_0.verification_code from user u1_0 where u1_0.username=?
+Hibernate: select u1_0.user_id,u1_0.code_creation_date,u1_0.email,u1_0.enabled,u1_0.password,u1_0.username,u1_0.verification_code from user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_user_id,r1_1.role_id,r1_1.role from users_roles r1_0 join role r1_1 on r1_1.role_id=r1_0.roles_role_id where r1_0.user_user_id=?
+Hibernate: select r1_0.user_user_id,r1_1.role_id,r1_1.role from users_roles r1_0 join role r1_1 on r1_1.role_id=r1_0.roles_role_id where r1_0.user_user_id=?
+Hibernate: select u1_0.user_id,u1_0.code_creation_date,u1_0.email,u1_0.enabled,u1_0.password,u1_0.username,u1_0.verification_code from user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_user_id,r1_1.role_id,r1_1.role from users_roles r1_0 join role r1_1 on r1_1.role_id=r1_0.roles_role_id where r1_0.user_user_id=?

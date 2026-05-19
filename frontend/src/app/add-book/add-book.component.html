@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  @if(err) {
+    <div class="alert alert-danger">
+      <strong>{{ err }}</strong>
+    </div>
+  }
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>ID Book</label>
+    <input type="text" [(ngModel)]="newBook.idBook" name="idBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Nom Book</label>
+    <input type="text" [(ngModel)]="newBook.nomBook" name="nomBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Prix Book</label>
+    <input type="number" [(ngModel)]="newBook.prixBook" name="prixBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Date Création</label>
+    <input type="date" [(ngModel)]="newBook.dateCreation" name="dateCreation" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Genre</label>
+    <select class="form-control form-control-lg" id="idGenre" name="idGenre" [(ngModel)]="newIdGenre">
+      @for(genre of genres; track genre.idGenre) {
+        <option [value]="genre.idGenre">{{genre.nomGenre}}</option>
+      }
+    </select>
+  </div>
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <label class="mb-2">Image :</label>
+    <input type="file" (change)="onImageUpload($event)" name="logo" class="form-control">
+  </div>
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <img [src]="imagePath" class="card-img-top img-fluid rounded-start" style="width: 500px; height: 300px" />
+  </div>
+  <button type="submit" (click)="addBook()" class="btn btn-success mt-3">Ajouter</button>
+</div>

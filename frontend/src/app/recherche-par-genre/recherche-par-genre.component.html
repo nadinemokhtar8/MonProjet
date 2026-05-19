@@ -1,0 +1,33 @@
+<div class="container">
+  @if(err) {
+    <div class="alert alert-danger">
+      <strong>{{ err }}</strong>
+    </div>
+  }
+  <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+    <label>Genres </label>
+    <select class="form-control form-control-lg" id="idGenre" name="idGenre" [(ngModel)]="IdGenre" (change)="onChange()">
+      @for(genre of genres; track genre.idGenre) {
+        <option [ngValue]="genre.idGenre">{{ genre.nomGenre }}</option>
+      }
+    </select>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr><th>Id</th><th>Nom</th><th>Prix</th></tr>
+        </thead>
+        @for(book of books; track book.idBook) {
+          <tbody>
+            <tr>
+              <td>{{ book.idBook }}</td>
+              <td>{{ book.nomBook }}</td>
+              <td>{{ book.prixBook }}</td>
+            </tr>
+          </tbody>
+        }
+      </table>
+    </div>
+  </div>
+</div>

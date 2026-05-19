@@ -1,0 +1,55 @@
+<div class="container mt-5">
+  <h2>Modifier un Book :</h2>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>ID Book</label>
+    <input readonly type="text" [(ngModel)]="currentBook.idBook" name="idBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Nom Book</label>
+    <input type="text" [(ngModel)]="currentBook.nomBook" name="nomBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Prix Book</label>
+    <input type="number" [(ngModel)]="currentBook.prixBook" name="prixBook" class="form-control">
+  </div>
+  <div class="col-sm-4 col-md-4 col-lg-4">
+    <label>Date Création</label>
+    <input type="date" [ngModel]="currentBook.dateCreation | date:'yyyy-MM-dd'" (ngModelChange)="currentBook.dateCreation=$event"
+      name="dateCreation" class="form-control">
+  </div>
+  <select class="form-control form-control-lg" id="idGenre" name="idGenre" [(ngModel)]="updatedGenreId">
+    @for(genre of genres; track genre.idGenre) {
+      <option [value]="genre.idGenre">{{genre.nomGenre}}</option>
+    }
+  </select>
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <img [src]="myImage" class="card-img-top img-fluid rounded-start" style="width: 500px; height: 300px" />
+  </div>
+  <div class="col-sm-16 col-md-16 col-lg-16">
+    <label class="mb-2">Image :</label>
+    <input type="file" (change)="onImageUpload($event)" class="form-control">
+  </div>
+  <div class="mt-2">
+    <button type="submit" (click)="onAddImageBook()" class="btn btn-success">Ajouter Image</button>
+  </div>
+  <div class="card shadow mb-4">
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Images</th>
+          </tr>
+        </thead>
+        @for(img of currentBook.images; track currentBook.idBook) {
+          <tbody>
+            <tr>
+              <td><img class="card-img-top img-responsive" src="{{'data:' + img.type + ';base64,' + img.image}}" style="height:50px;width:100px"></td>
+              <td style="width:20%"><a class="btn btn-danger" (click)="supprimerImage(img)">Supprimer</a></td>
+            </tr>
+          </tbody>
+        }
+      </table>
+    </div>
+  </div>
+  <button type="submit" (click)="updateBook()" class="btn btn-success">Modifier</button>
+</div>

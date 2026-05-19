@@ -1,0 +1,52 @@
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2026-05-15T04:13:44.685+01:00  INFO 4660 --- [           main] c.n.users.UsersMicroserviceApplication   : Starting UsersMicroserviceApplication v0.0.1-SNAPSHOT using Java 17.0.12 with PID 4660 (C:\Users\nadin\Documents\New project\NadineBooks\users-microservice\target\users-microservice-0.0.1-SNAPSHOT.jar started by nadin in C:\Users\nadin\Documents\New project\NadineBooks\users-microservice)
+2026-05-15T04:13:46.204+01:00  INFO 4660 --- [           main] c.n.users.UsersMicroserviceApplication   : No active profile set, falling back to 1 default profile: "default"
+2026-05-15T04:14:10.532+01:00  INFO 4660 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-15T04:14:12.647+01:00  INFO 4660 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1690 ms. Found 2 JPA repository interfaces.
+2026-05-15T04:14:25.093+01:00  INFO 4660 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8081 (http)
+2026-05-15T04:14:25.269+01:00  INFO 4660 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-05-15T04:14:25.273+01:00  INFO 4660 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.16]
+2026-05-15T04:14:25.940+01:00  INFO 4660 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/users]  : Initializing Spring embedded WebApplicationContext
+2026-05-15T04:14:25.949+01:00  INFO 4660 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 36296 ms
+2026-05-15T04:14:29.230+01:00  INFO 4660 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-15T04:14:29.946+01:00  INFO 4660 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.3.1.Final
+2026-05-15T04:14:30.174+01:00  INFO 4660 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-15T04:14:37.610+01:00  INFO 4660 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-15T04:14:37.755+01:00  INFO 4660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-15T04:14:38.709+01:00  INFO 4660 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6d7740f0
+2026-05-15T04:14:38.728+01:00  INFO 4660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-15T04:14:45.414+01:00  INFO 4660 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-05-15T04:14:45.950+01:00  INFO 4660 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+Hibernate: select u1_0.user_id,u1_0.code_creation_date,u1_0.email,u1_0.enabled,u1_0.password,u1_0.username,u1_0.verification_code from user u1_0 where u1_0.username=?
+Hibernate: select r1_0.user_user_id,r1_1.role_id,r1_1.role from users_roles r1_0 join role r1_1 on r1_1.role_id=r1_0.roles_role_id where r1_0.user_user_id=?
+2026-05-15T04:14:50.963+01:00  WARN 4660 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-15T04:14:52.144+01:00  INFO 4660 --- [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@769b1d1c, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@c5e7696, org.springframework.security.web.context.SecurityContextHolderFilter@28532753, org.springframework.security.web.header.HeaderWriterFilter@930911e, org.springframework.web.filter.CorsFilter@4f579582, org.springframework.security.web.authentication.logout.LogoutFilter@26bbbe9e, com.nadine.users.security.JWTAuthenticationFilter@4769e70c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a6871ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@260043d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@69346100, org.springframework.security.web.session.SessionManagementFilter@42d96745, org.springframework.security.web.access.ExceptionTranslationFilter@3d2b8e, org.springframework.security.web.access.intercept.AuthorizationFilter@202b5293]
+2026-05-15T04:14:52.825+01:00  WARN 4660 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-05-15T04:14:52.887+01:00  INFO 4660 --- [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-05-15T04:14:52.897+01:00  INFO 4660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-05-15T04:14:53.833+01:00  INFO 4660 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-05-15T04:14:53.896+01:00  INFO 4660 --- [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-05-15T04:14:53.965+01:00 ERROR 4660 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8081 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8081 or configure this application to listen on another port.
+
